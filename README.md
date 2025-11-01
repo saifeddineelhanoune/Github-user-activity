@@ -29,3 +29,6 @@ To run this program, you need to have Go installed on your machine.
     go run main.go
     ```
 
+### Project Url:
+https://github.com/saifeddineelhanoune/Github-user-activity
+
