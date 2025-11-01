@@ -7,8 +7,11 @@ import (
 	"io"
 )
 
-type JsonResponse struct {
-	CurrentUrl string `json:"current_url"`
+type Event struct {
+	Type string `json:"type"`
+	Repo struct {
+		Name string `json:"name"`
+	} `json:"repo"`
 }
 
 func main() {
@@ -23,9 +26,12 @@ func main() {
 		panic(err)
 	}
 
-	var data JsonResponse
-	if err := json.Unmarshal(body, &data); err != nil {
+	var events []Event
+	if err := json.Unmarshal(body, &events); err != nil {
 		panic(err)
 	}
-	fmt.Println(data.CurrentUrl)
+
+	for _, event := range events {
+		fmt.Printf("Event Type: %s, Repo: %s\n", event.Type, event.Repo.Name)
+	}
 }
