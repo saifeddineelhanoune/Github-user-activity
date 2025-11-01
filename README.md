@@ -30,5 +30,5 @@ To run this program, you need to have Go installed on your machine.
     ```
 
 ### Project Url:
-https://github.com/saifeddineelhanoune/Github-user-activity
+https://roadmap.sh/projects/github-user-activity
 
